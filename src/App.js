@@ -130,8 +130,272 @@ function App() {
             ],
         },
         {
-            id: 1,
+            id: 3,
             question: 'Is HTML a programming language?',
+            answers: [
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'HTML is a trap for kids',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 4,
+            question: 'What is JSON?',
+            answers: [
+                {
+                    text: 'open standard file format',
+                    correct: true,
+                },
+                {
+                    text: 'name of a TV dog',
+                    correct: false,
+                },
+                {
+                    text: 'surname of a magician',
+                    correct: false,
+                },
+                {
+                    text: 'pink flower of Rome',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 5,
+            question: 'Array is an...?',
+            answers: [
+                {
+                    text: 'object',
+                    correct: true,
+                },
+                {
+                    text: 'string',
+                    correct: false,
+                },
+                {
+                    text: 'mumber',
+                    correct: false,
+                },
+                {
+                    text: 'none of above',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 6,
+            question: 'useMemo returns...',
+            answers: [
+                {
+                    text: 'great memories',
+                    correct: false,
+                },
+                {
+                    text: 'your ex',
+                    correct: false,
+                },
+                {
+                    text: 'memoized value',
+                    correct: true,
+                },
+                {
+                    text: 'fresh air',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 7,
+            question: 'One of the core building blocks of React is...',
+            answers: [
+                {
+                    text: 'component',
+                    correct: true,
+                },
+                {
+                    text: 'tag',
+                    correct: false,
+                },
+                {
+                    text: 'string',
+                    correct: false,
+                },
+                {
+                    text: 'sms',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 8,
+            question: 'Is CSS a programming language?',
+            answers: [
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'CSS is a canvas',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 9,
+            question: 'Is JS a programming language?',
+            answers: [
+                {
+                    text: 'Nope',
+                    correct: false,
+                },
+                {
+                    text: 'Yes',
+                    correct: true,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'HTML is a trap for kids',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 10,
+            question: 'Is BEM a programming language?',
+            answers: [
+                {
+                    text: 'Not really',
+                    correct: true,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'BEM is BEM and nothing more',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 11,
+            question: 'Is Haskell a programming language?',
+            answers: [
+                {
+                    text: 'Absolutely',
+                    correct: true,
+                },
+                {
+                    text: 'Nuh',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'Haskell is a way of living',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 12,
+            question: 'Is tailwind a CSS framework?',
+            answers: [
+                {
+                    text: 'Yes',
+                    correct: true,
+                },
+                {
+                    text: 'No',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'What?',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 12,
+            question: 'Is HTML a programming language?',
+            answers: [
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'HTML is a trap for kids',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 14,
+            question: 'Is SCSS a programming language?',
+            answers: [
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'HTML is a trap for kids',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 15,
+            question: 'Is Material UI a programming language?',
             answers: [
                 {
                     text: 'Nope',
