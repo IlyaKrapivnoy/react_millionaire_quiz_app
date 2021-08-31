@@ -175,18 +175,18 @@ function App() {
         },
         {
             id: 5,
-            question: 'Array is an...?',
+            question: 'Array is...?',
             answers: [
                 {
-                    text: 'object',
+                    text: 'an object',
                     correct: true,
                 },
                 {
-                    text: 'string',
+                    text: 'a string',
                     correct: false,
                 },
                 {
-                    text: 'mumber',
+                    text: 'a number',
                     correct: false,
                 },
                 {
