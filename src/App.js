@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './app.css';
 import Trivia from './components/Trivia';
 
 function App() {
     const [questionNumber, setQuestionNumber] = useState(1);
+    const [stop, setStop] = useState(false);
+    const [earned, setEarned] = useState('$ 0');
+
     const moneyPyramid = [
         {
             id: 1,
@@ -67,15 +70,102 @@ function App() {
         },
     ].reverse();
 
+    useEffect(() => {
+        questionNumber > 1 &&
+            setEarned(
+                moneyPyramid.find((m) => m.id === questionNumber - 1).amount
+            );
+    }, [moneyPyramid, questionNumber]);
+
+    const data = [
+        {
+            id: 1,
+            question: 'Is JavaScript strongly typed language?',
+            answers: [
+                {
+                    text: 'For sure',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Who knows',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 2,
+            question: 'Is React a Java library?',
+            answers: [
+                {
+                    text: 'This is not a library',
+                    correct: false,
+                },
+                {
+                    text: 'Java is a library',
+                    correct: false,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+            ],
+        },
+        {
+            id: 1,
+            question: 'Is HTML a programming language?',
+            answers: [
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'HTML is a trap for kids',
+                    correct: false,
+                },
+            ],
+        },
+    ];
+
     return (
         <div className='app'>
             <div className='main'>
-                <div className='top'>
-                    <div className='timer'>30</div>
-                </div>
-                <div className='bottom'>
-                    <Trivia />
-                </div>
+                {stop ? (
+                    <h1 className='endText'>You have earned {earned}</h1>
+                ) : (
+                    <>
+                        <div className='top'>
+                            <div className='timer'>30</div>
+                        </div>
+                        <div className='bottom'>
+                            <Trivia
+                                data={data}
+                                setStop={setStop}
+                                questionNumber={questionNumber}
+                                setQuestionNumber={setQuestionNumber}
+                            />
+                        </div>
+                    </>
+                )}
             </div>
             <div className='pyramid'>
                 <ul className='moneyLIst'>
