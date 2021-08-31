@@ -1,12 +1,19 @@
-const Trivia = () => {
+import { useEffect, useState } from 'react';
+
+const Trivia = ({ data, setTimeOut, questionNumber, setQuestionNumber }) => {
+    const [question, setQuestion] = useState(null);
+
+    useEffect(() => {
+        setQuestion(data[questionNumber - 1]);
+    }, [data, questionNumber]);
+
     return (
         <div className='trivia'>
-            <div className='question'>Who is the most popular author?</div>
+            <div className='question'>{question?.question}</div>
             <div className='answers'>
-                <div className='answer'>David Flanagan</div>
-                <div className='answer'>Scott Grahnnaman</div>
-                <div className='answer'>Ban Ahlbahary</div>
-                <div className='answer'>Stephen King</div>
+                {question?.answers.map((a) => (
+                    <div className='answer'>{a.text}</div>
+                ))}
             </div>
         </div>
     );

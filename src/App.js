@@ -4,6 +4,7 @@ import Trivia from './components/Trivia';
 
 function App() {
     const [questionNumber, setQuestionNumber] = useState(1);
+    const [timeOut, setTimeOut] = useState(false);
     const moneyPyramid = [
         {
             id: 1,
@@ -67,6 +68,75 @@ function App() {
         },
     ].reverse();
 
+    const data = [
+        {
+            id: 1,
+            question: 'Is JavaScript strongly typed language?',
+            answers: [
+                {
+                    text: 'For sure',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Who knows',
+                    correct: false,
+                },
+            ],
+        },
+        {
+            id: 2,
+            question: 'Is React a Java library?',
+            answers: [
+                {
+                    text: 'This is not a library',
+                    correct: false,
+                },
+                {
+                    text: 'Java is a library',
+                    correct: false,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+            ],
+        },
+        {
+            id: 1,
+            question: 'Is HTML a programming language?',
+            answers: [
+                {
+                    text: 'Nope',
+                    correct: true,
+                },
+                {
+                    text: 'Yes',
+                    correct: false,
+                },
+                {
+                    text: 'Maybe',
+                    correct: false,
+                },
+                {
+                    text: 'HTML is a trap for kids',
+                    correct: false,
+                },
+            ],
+        },
+    ];
+
     return (
         <div className='app'>
             <div className='main'>
@@ -74,7 +144,12 @@ function App() {
                     <div className='timer'>30</div>
                 </div>
                 <div className='bottom'>
-                    <Trivia />
+                    <Trivia
+                        data={data}
+                        setTimeOut={setTimeOut}
+                        questionNumber={questionNumber}
+                        setQuestionNumber={setQuestionNumber}
+                    />
                 </div>
             </div>
             <div className='pyramid'>
