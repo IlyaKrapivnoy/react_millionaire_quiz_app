@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const Trivia = ({ data, setTimeOut, questionNumber, setQuestionNumber }) => {
+const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
     const [question, setQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [className, setClassName] = useState('answer');
@@ -12,6 +12,9 @@ const Trivia = ({ data, setTimeOut, questionNumber, setQuestionNumber }) => {
     const handleClick = (a) => {
         setSelectedAnswer(a);
         setClassName('answer active');
+        setTimeout(() => {
+            setClassName(a.correct ? 'answer correct' : 'answer wrong');
+        }, 3000);
     };
 
     return (
