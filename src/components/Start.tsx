@@ -1,9 +1,13 @@
 import { useRef } from 'react';
 
-const Start = ({ setUsername }) => {
-    const inputRef = useRef();
+interface IStartProps {
+    setUsername: (username: string) => void;
+}
+
+const Start = ({ setUsername }: IStartProps) => {
+    const inputRef = useRef<HTMLInputElement>(null);
     const handleClick = () => {
-        inputRef.current.value && setUsername(inputRef.current.value);
+        inputRef.current?.value && setUsername(inputRef.current.value);
     };
 
     return (

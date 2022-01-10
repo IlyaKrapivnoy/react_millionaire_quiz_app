@@ -4,9 +4,33 @@ import play from '../sounds/play.mp3';
 import correct from '../sounds/correct.mp3';
 import wrong from '../sounds/wrong.mp3';
 
-const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
-    const [question, setQuestion] = useState(null);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+type Answer = {
+    correct: boolean;
+    text: string;
+};
+
+type Question = {
+    question: string;
+    answers: Answer[];
+};
+
+type Reducer = (prev: number) => number;
+
+interface ITriviaProps {
+    data: Question[];
+    setStop: (stop: boolean) => void;
+    questionNumber: number;
+    setQuestionNumber: (reducer: Reducer) => void;
+}
+
+const Trivia = ({
+    data,
+    setStop,
+    questionNumber,
+    setQuestionNumber,
+}: ITriviaProps) => {
+    const [question, setQuestion] = useState<Question | null>(null);
+    const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null);
     const [className, setClassName] = useState('answer');
     const [letsPlay] = useSound(play);
     const [correctAnswer] = useSound(correct);
@@ -20,13 +44,13 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
         setQuestion(data[questionNumber - 1]);
     }, [data, questionNumber]);
 
-    const delay = (duration, callback) => {
+    const delay = (duration: number, callback: () => void) => {
         setTimeout(() => {
             callback();
         }, duration);
     };
 
-    const handleClick = (a) => {
+    const handleClick = (a: Answer) => {
         setSelectedAnswer(a);
         setClassName('answer active');
         delay(3000, () =>
