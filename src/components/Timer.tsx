@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 
-export default function Timer({ setTimeOut, questionNumber }) {
+interface ITimerProps {
+    setTimeOut: (isTimedOut: boolean) => void;
+    questionNumber: number;
+}
+
+export default function Timer({ setTimeOut, questionNumber }: ITimerProps) {
     const [timer, setTimer] = useState(30);
 
     useEffect(() => {
