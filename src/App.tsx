@@ -4,13 +4,18 @@ import Timer from './components/Timer';
 import Trivia from './components/Trivia';
 import Start from './components/Start';
 
+type PyramidItem = {
+    id: number;
+    amount: string;
+};
+
 function App() {
-    const [username, setUsername] = useState(null);
+    const [username, setUsername] = useState<string | null>(null);
     const [questionNumber, setQuestionNumber] = useState(1);
     const [stop, setStop] = useState(false);
     const [earned, setEarned] = useState('$ 0');
 
-    const moneyPyramid = useMemo(
+    const moneyPyramid = useMemo<PyramidItem[]>(
         () =>
             [
                 {
@@ -80,7 +85,7 @@ function App() {
     useEffect(() => {
         questionNumber > 1 &&
             setEarned(
-                moneyPyramid.find((m) => m.id === questionNumber - 1).amount
+                moneyPyramid.find((m) => m.id === questionNumber - 1)!!.amount
             );
     }, [moneyPyramid, questionNumber]);
 
@@ -431,7 +436,6 @@ function App() {
                                 <div className='top'>
                                     <div className='timer'>
                                         <Timer
-                                            setTimeOut={setTimeout}
                                             questionNumber={questionNumber}
                                         />
                                     </div>
